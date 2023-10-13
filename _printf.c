@@ -9,38 +9,42 @@
 
 int _printf(const char *format, ...)
 {
-	int length = 0;
-	va_list arguments;
+	int t_len = 0; /* initialize the length variable */
+	va_list arguments; /* declare variable for arguments */
 
-	va_start(arguments, format);
+	va_start(arguments, format); /* initialize arguments with format */
 
 	while (*format != '\0')
 	{
+		/* check if current character is the start of a format specifier */
 		if (*format == "%")
 		{
-			format++;
+			format++; /* move to next character */
 
 			switch (*format)
 			{
-				case '%':
-					length += put_char('%');
+				case '%': /* if %%, print % */
+					t_len += put_char('%');
 					break;
-				case 'c':
+				case 'c': /* if %c, print a character from arguments */
 				{
-					length += put_char(va_arg(arguments, int));
+					t_len += put_char(va_arg(arguments, int));
 					break;
 				}
-				case 's':
+				case 's': /* if %s, print a string from arguments */
 				{
-					length += put_str(va_arg(arguments, char *));
+					t_len += put_str(va_arg(arguments, char *));
 					break;
 				}
 			}
 		}
+		/* if current character is not %, print it and move on */
 		else
-			length += put_char(*format);
+			t_len += put_char(*format);
 		format++;
 	}
+	/* free arguments */
 	va_end(arguments);
-	return (length);
+	/* return total length of formatted string */
+	return (t_len);
 }
