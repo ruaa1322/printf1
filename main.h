@@ -26,4 +26,11 @@ int printf_37(void);
 int printf_char(va_list val);
 int printf_string(va_list val);
 int _putchar(char c);
+
+/* Functions to print numbers */
+int print_int(va_list types, char buffer[],
+        int flags, int width, int precision, int size);
+int print_percent(va_list types, char buffer[],
+	int flags, int width, int precision, int size);
+
 #endif
