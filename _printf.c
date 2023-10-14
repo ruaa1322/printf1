@@ -9,35 +9,43 @@
 
 int _printf(const char *format, ...)
 {
-	func_list funcs[] = {
-		{"%%", pnt37},
-		{"%s", pntstr},
-		{"%c", pntch},
-	};
+	int t_len = 0; /*inintialize total length*/
+	va_list value; /*declare argument list*/
 
-	int t_len = 0, i = 0, j;
-	va_list value;
-
-	va_start(value, format);
-Here:
-	while (format[i] != '\0')
+	va_start(value, format); /*initialize the arguments with format*/
+	while (*format != '\0') /*while we are still on a character*/
 	{
-		j = 13;
-
-		while (j >= 0)
+		if (*format == '%') /*if current character is %*/
 		{
-			if (funcs[j].c[0] == format[i] && funcs[j].c[1] == format[i + 1])
+			format++; /*move to next character*/
+			switch (*format)
 			{
-				t_len += funcs[j].f(value);
-				i = i + 2;
+				/*if character is %, increase length and print the variable*/
+				case '%':
+					t_len += put_char('%');
+					break;
+				case 'c':
+					t_len += put_char(va_arg(value, int));
+					break;
+				case 's':
+				{
+					char *string = va_arg(value, char *);
 
-				goto Here;
+					if (string == NULL)
+						t_len += put_str("(nil)");
+					else
+						t_len += put_str(string);
+					break;
+				}
+				default:
+				t_len += put_char('%');
+				t_len += put_char(*format);
+				break;
 			}
-			j--;
 		}
-		put_char(format[i]);
-		t_len++;
-		i++;
+		else
+			t_len += put_char(*format);
+		format++;
 	}
 	va_end(value);
 	return (t_len);

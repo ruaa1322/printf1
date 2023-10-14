@@ -5,16 +5,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-/**
- * struct fmt - struct of functions and format specifiers
- * @c: format specifiers
- * @f: fuctions
- */
-typedef struct fmt
-{
-	char *c;
-	int (*f)();
-}func_list;
 
 int _printf(const char *format, ...);
 int put_char(char c);
