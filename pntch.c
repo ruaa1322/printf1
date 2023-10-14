@@ -2,11 +2,11 @@
 
 /**
  * pntch - prints a char.
- * @val:argument.
- * Return:1.
+ * @value: argument
+ * Return: argument
  */
 
 int pntch(va_list value)
 {
-	return (va_arg(value, int));
+	return (put_char(va_arg(value, int)));
 }
