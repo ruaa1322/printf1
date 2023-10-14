@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 				}
 				default: /* if %%, print % */
 					t_len += put_char('%');
-					t_len += put_char(*format);;
+					t_len += put_char(*format);
 			}
 		}
 		/* if current character is not %, print it and move on */
