@@ -7,7 +7,7 @@
 int printf_string(va_list val)
 {
 	char *str;
-	int i:
+	int i;
 	int length;
 
 	str = va_arg(val, char *);
@@ -23,7 +23,7 @@ int printf_string(va_list val)
 	{
 		length = _strlen(str);
 		for (i = 0; i < length; i++)
-			_putchar(str[i];
+			_putchar(str[i]);
 		return (length);
-		}
+	}
 }

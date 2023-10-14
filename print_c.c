@@ -1,6 +1,3 @@
-#ifndef MAIN_H
-#include"main.h"
-#ifndef MAIN_H
 #include"main.h"
 
 /**
@@ -14,6 +11,6 @@ int prinf_char(va_list val)
 	char str;
 
 	str = va_arg(val, int);
-	_putcher(str);
+	_putchar(str);
 	return (1);
 }
