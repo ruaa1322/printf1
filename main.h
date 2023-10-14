@@ -9,7 +9,7 @@
 int _printf(const char *format, ...);
 int put_char(char c);
 int put_str(char *string);
-<<<<<<< HEAD
+/*<<<<<<< HEAD*/
 int _printf(const char *format, ...);
 int printf_int(va_list args);
 int printf_dec(va_list args);
@@ -32,6 +32,6 @@ int pntch(va_list value);
 int pntstr(va_list value);
 int str_len(char *str);
 int str_len_c(const char *str);
->>>>>>> 84473613dbaa84a5e512141168b04b8a927be8c0
+/*>>>>>>> 84473613dbaa84a5e512141168b04b8a927be8c0*/
 
 #endif
