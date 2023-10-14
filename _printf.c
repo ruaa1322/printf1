@@ -9,43 +9,36 @@
 
 int _printf(const char *format, ...)
 {
-        int t_len = 0;
-        va_list value;
+	func_list funcs[] = {
+		{"%%", pnt37},
+		{"%s", pntstr},
+		{"%c", pntch},
+	};
 
-        va_start(value, format);
-        while (*format != '\0')
-        {
-                if (*format == '%')
-                {
-                        format++;
-                        switch (*format)
-                        {
-                                case '%':
-                                        t_len += put_char('%');
-                                        break;
-                                case 'c':
-                                        t_len += put_char(va_arg(value, int));
-                                        break;
-                                case 's':
-                                {
-                                        char *string = va_arg(value, char *);
+	int t_len = 0, i = 0, j;
+	va_list value;
 
-                                        if (string == NULL)
-                                                t_len += put_str("(nil)");
-                                        else
-                                                t_len += put_str(string);
-                                        break;
-                                }
-                                default:
-                                        t_len += put_char('%');
-                                        t_len += put_char(*format);
-                                        break;
-                        }
-                }
-                else
-                        t_len += put_char(*format);
-                format++;
-        }
-        va_end(value);
-        return (t_len);
+	va_start(value, format);
+Here:
+	while (format[i] != '\0')
+	{
+		j = 13;
+
+		while (j >= 0)
+		{
+			if (funcs[j].c[0] == format[i] && funcs[j].c[1] == format[i + 1])
+			{
+				t_len += funcs[j].f(value);
+				i = i + 2;
+
+				goto Here;
+			}
+			j--;
+		}
+		put_char(format[i]);
+		t_len++;
+		i++;
+	}
+	va_end(value);
+	return (t_len);
 }
