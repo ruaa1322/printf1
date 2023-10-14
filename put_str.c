@@ -13,7 +13,7 @@ int put_str(char *string)
 	while (*string)
 	{
 		length = length + put_char(*string);
-		length++;
+		string++;
 	}
 	return (length);
 }
