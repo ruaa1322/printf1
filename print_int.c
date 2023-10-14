@@ -11,7 +11,7 @@ int print_int(va_list args)
 	int i = 1;
 
 	n = n / 10;
-	num - n;
+	num = n;
 
 	if (last < 0)
 	{
@@ -39,7 +39,7 @@ int print_int(va_list args)
 		i++;
 	}
 }
-_putchar(last = '0');
+_putchar(last +	'0');
 return (i);
 }
 #include "main.h"
@@ -53,6 +53,7 @@ int print_dec(va_list args)
 	int n = va_args(args, int);
 	int num, last = n % 10, digit, exp = 1;
 	int i = 1;
+	int exp = 1;
 
 	n = n / 10
 	num = n;
@@ -82,6 +83,6 @@ int print_dec(va_list args)
 		i++;
 	}
 }
-_putchar(last = '0');
+_putchar(last + '0');
 return (i);
 }
