@@ -11,43 +11,41 @@ int _printf(const char *format, ...)
 {
 	int t_len = 0;
 	va_list value;
-	char *c;
-	c = format;
+
 	va_start(value, format);
 
-	while (*c != '\0')
+	while (*format != '\0')
 	{
-		if (*c == '%')
+		if (*format == '%')
 		{
-			c++;
-			switch (*c)
+			format++;
+			switch (*format)
 			{
 				case '%':
-				{
 					t_len += put_char('%');
 					break;
-				}
 				case 'c':
-				{
 					t_len += put_char(va_arg(value, int));
 					break;
-				}
 				case 's':
 				{
 					char *string = va_arg(value, char *);
-					(string == NULL) ? t_len += put_str("(nil)") : t_len += put_str(string);
+
+					if (string == NULL)
+						t_len += put_str("(nil)");
+					else
+						t_len += put_str(string);
 					break;
 				}
 				default:
-				t_len += put_char('%');
-				t_len += put_char(*c);
-				break;
+					t_len += put_char('%');
+					t_len += put_char(*format);
+					break;
 			}
-			else
-				t_len += put_char(*c);
-			c++;
 		}
-		c++;
+		else
+			t_len += put_char(*format);
+		format++;
 	}
 	va_end(value);
 	return (t_len);
