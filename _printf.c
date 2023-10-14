@@ -31,10 +31,7 @@ int _printf(const char *format, ...)
 				{
 					char *string = va_arg(value, char *);
 
-					if (string == NULL)
-						t_len += put_str("(nil)");
-					else
-						t_len += put_str(string);
+					t_len += put_str(string ? string : "(nil)");
 					break;
 				}
 				default:
