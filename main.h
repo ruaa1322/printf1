@@ -5,17 +5,11 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-int _putchar(char c);
+
 int _printf(const char *format, ...);
-int prinf_char(va_list val);
-int printf_string(va_list val);
-int _strlen(char *str);
-int _strlenc(const char *str);
-int print_37(void);
-
-
 int put_char(char c);
 int put_str(char *string);
+<<<<<<< HEAD
 int _printf(const char *format, ...);
 int printf_int(va_list args);
 int printf_dec(va_list args);
@@ -32,5 +26,12 @@ int print_int(va_list types, char buffer[],
         int flags, int width, int precision, int size);
 int print_percent(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
+=======
+int pnt37(void);
+int pntch(va_list value);
+int pntstr(va_list value);
+int str_len(char *str);
+int str_len_c(const char *str);
+>>>>>>> 84473613dbaa84a5e512141168b04b8a927be8c0
 
 #endif
