@@ -17,7 +17,7 @@ int print_37(void);
 int put_char(char c);
 int put_str(char *string);
 int _printf(const char *format, ...);
-int print_int(va_list args);
-int print_dec(va_list args);
+int printf_int(va_list args);
+int printf_dec(va_list args);
 
 #endif
