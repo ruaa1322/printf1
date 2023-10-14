@@ -6,11 +6,7 @@
  * Return:1.
  */
 
-int pntch(va_list val)
+int pntch(va_list value)
 {
-	char charac;
-
-	charac = va_arg(val, int);
-	put_char(charac);
-	return (1);
+	return (va_arg(value, int));
 }

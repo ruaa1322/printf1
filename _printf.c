@@ -25,13 +25,11 @@ int _printf(const char *format, ...)
 					t_len += put_char('%');
 					break;
 				case 'c':
-					t_len += put_char(va_arg(value, int));
+					t_len += pntch(value);
 					break;
 				case 's':
 				{
-					char *string = va_arg(value, char *);
-
-					t_len += put_str(string ? string : "(nil)");
+					t_len += pntstr(value);
 					break;
 				}
 				default:
