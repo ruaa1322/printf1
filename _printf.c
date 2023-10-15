@@ -14,8 +14,8 @@ int _printf(const char *format, ...)
 	va_list value; /*declare argument list*/
 	fmt specifiers[] = {
 		{'%', pnt37}, {'c', pntch}, {'s', pntstr},
-		{'d', pntint}, {'i', pntint},
-		{'b', pntb},
+		{'d', pntint}, {'i', pntint}, {'b', pntb},
+		{'u', pntuint}, {'o', pntoct}, {'x', pnthex}, {'X', pntHEX},
 	};
 
 	if (format == NULL)
