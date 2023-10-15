@@ -8,5 +8,9 @@ int main(void)
 	char *ns = NULL;
 
 	_printf("%d, %i, %c, %c, %s, %s\n", a, b, c, n, s, ns);
+	_printf("%d, %i, %d, %i\n", 20, 0, 100, 50);
+	_printf("%%");
 	_printf("%b\n", 98);
+
+	return (0);
 }

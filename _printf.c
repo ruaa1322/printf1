@@ -9,8 +9,14 @@
 
 int _printf(const char *format, ...)
 {
-	int t_len = 0; /*inintialize total length*/
+	int specs, t_len = 0; /*inintialize total length*/
+	size_t i;
 	va_list value; /*declare argument list*/
+	fmt specifiers[] = {
+		{'%', pnt37}, {'c', pntch}, {'s', pntstr},
+		{'d', pntint}, {'i', pntint},
+		{'b', pntb},
+	};
 
 	if (format == NULL)
 		return (-1);
@@ -20,27 +26,21 @@ int _printf(const char *format, ...)
 		if (*format == '%') /*if current character is %*/
 		{
 			format++; /*move to next character*/
-			switch (*format)
-			{/*if character is %, increase length and print the variable*/
-				case '%':
-					t_len += put_char('%');
+			i = 0;
+			specs = 0;
+			while (i < sizeof(specifiers) / sizeof(specifiers[0]))
+			{
+				if (*format == specifiers[i].c)
+				{
+					t_len += specifiers[i].f(value);
+					specs = 1;
 					break;
-				case 'c':
-					t_len += pntch(value);
-					break;
-				case 's':
-					t_len += pntstr(value);
-					break;
-				case 'd':
-				case 'i':
-					t_len += pntint(value);
-					break;
-				case 'b':
-					t_len += pntb(value);
-					break;
-				default:
+				}
+				i++;
+			}
+			if (specs == 0)
+			{
 				t_len += put_char('%') + put_char(*format);
-				break;
 			}
 		}
 		else

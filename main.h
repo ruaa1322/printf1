@@ -5,10 +5,20 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+/**
+ * struct fmt - stucture to hold functions and specifiers
+ * @c: specifier
+ * @f: function
+ */
+typedef struct
+{
+	char c;
+	int (*f)(va_list);
+} fmt;
 
 int put_char(char c);
 int put_str(char *string);
-int pnt37(void);
+int pnt37(va_list value);
 int pntch(va_list value);
 int pntstr(va_list value);
 int pntint(va_list value);

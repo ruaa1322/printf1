@@ -11,7 +11,7 @@ int pntint(va_list value)
 	int n = va_arg(value, int); /* retrieve the integer from value */
 	int t_len = 0; /*initialize total length*/
 	int dg; /*used to get last value of n*/
-	int i;
+	int i = 0;
 	char dg_char; /*used to conver int to char*/
 	char buf[12];
 
@@ -23,6 +23,11 @@ int pntint(va_list value)
 		n = -n;
 	}
 
+	if (n == 0)
+	{
+		t_len += put_char('0');
+		return (t_len);
+	}
 	while (n > 0) /*while the n > 0*/
 	{
 		dg = n % 10;
@@ -33,7 +38,9 @@ int pntint(va_list value)
 	}
 
 	for (i--; i >= 0; i--)
+	{
 		t_len += put_char(buf[i]);
+	}
 
 	return (t_len);
 }

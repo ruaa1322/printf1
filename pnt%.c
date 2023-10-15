@@ -1,11 +1,12 @@
 #include "main.h"
 /**
- * pnt37 - print % signe
+ * pnt37 - print % sign
+ * @value: argument
  * Return: int
  */
 
-int pnt37(void)
+int pnt37(va_list value)
 {
-	put_char(37);
-	return (1);
+	(void)value;
+	return (put_char('%'));
 }
