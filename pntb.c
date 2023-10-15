@@ -28,7 +28,7 @@ int pntb(va_list value)
 		i++;
 	}
 
-	/* reverse order */ 
+	/* reverse order */
 	for (i--; i >= 0; i--)
 	{
 		t_len += put_char(bin[i] + '0');

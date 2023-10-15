@@ -32,7 +32,7 @@ int pntint(va_list value)
 		i++;
 	}
 
-	for (i--; i >= 0; i--) 
+	for (i--; i >= 0; i--)
 		t_len += put_char(buf[i]);
 
 	return (t_len);
