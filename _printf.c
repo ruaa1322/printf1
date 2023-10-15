@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 					t_len += pntstr(value);
 					break;
 				default:
-				t_len += put_char(*format);
+				t_len += put_char('%') + put_char(*format);
 				break;
 			}
 		}
