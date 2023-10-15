@@ -9,11 +9,11 @@
 
 int _printf(const char *format, ...)
 {
-	if (format == NULL)
-		return (-1);
 	int t_len = 0; /*inintialize total length*/
 	va_list value; /*declare argument list*/
 
+	if (format == NULL)
+		return (-1);
 	va_start(value, format); /*initialize the arguments with format*/
 	while (*format != '\0') /*while we are still on a character*/
 	{
