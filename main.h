@@ -12,6 +12,7 @@ int pnt37(void);
 int pntch(va_list value);
 int pntstr(va_list value);
 int pntint(va_list value);
+int pntb(va_list value);
 int _printf(const char *format, ...);
 int str_len(char *str);
 int str_len_c(const char *str);

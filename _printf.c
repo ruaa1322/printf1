@@ -36,6 +36,9 @@ int _printf(const char *format, ...)
 				case 'i':
 					t_len += pntint(value);
 					break;
+				case 'b':
+					t_len += pntb(value);
+					break;
 				default:
 				t_len += put_char('%') + put_char(*format);
 				break;
