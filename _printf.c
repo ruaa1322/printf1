@@ -32,6 +32,10 @@ int _printf(const char *format, ...)
 				case 's':
 					t_len += pntstr(value);
 					break;
+				case 'd':
+				case 'i':
+					t_len += pntint(value);
+					break;
 				default:
 				t_len += put_char('%') + put_char(*format);
 				break;
