@@ -1,0 +1,1 @@
+This function checks if the string is NULL and returns nil if so, else it returns the string
