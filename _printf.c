@@ -21,8 +21,7 @@ int _printf(const char *format, ...)
 		{
 			format++; /*move to next character*/
 			switch (*format)
-			{
-				/*if character is %, increase length and print the variable*/
+			{/*if character is %, increase length and print the variable*/
 				case '%':
 					t_len += put_char('%');
 					break;
