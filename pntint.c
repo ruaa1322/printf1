@@ -10,16 +10,13 @@ int pntint(va_list value)
 {
 	int n = va_arg(value, int); /* retrieve the integer from value */
 	int t_len = 0; /*initialize total length*/
-	int dg; /*used to get last value of n*/
-	int i = 0;
-	char dg_char; /*used to conver int to char*/
+	int dg, i = 0; /*i is counter, dg is the current digit*/
+	char dg_char; /*used to convert int to char*/
 	char buf[12];
 
 	if (n < 0) /*if integer is negative*/
 	{
-		/*increase length and add -*/
 		t_len += put_char('-');
-		/*make the number positive*/
 		n = -n;
 	}
 
@@ -28,6 +25,7 @@ int pntint(va_list value)
 		t_len += put_char('0');
 		return (t_len);
 	}
+
 	while (n > 0) /*while the n > 0*/
 	{
 		dg = n % 10;

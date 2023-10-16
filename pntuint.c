@@ -27,7 +27,9 @@ int pntuint(va_list value)
 	}
 
 	for (i--; i >= 0; i--)
+	{
 		t_len += put_char(buf[i]);
+	}
 
 	return (t_len);
 }

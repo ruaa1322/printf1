@@ -5,6 +5,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+
+#define BUF_SIZE 1024
 /**
  * struct fmt - stucture to hold functions and specifiers
  * @c: specifier
@@ -13,7 +15,7 @@
 typedef struct
 {
 	char c;
-	int (*f)(va_list);
+	int (*f)(va_list value);
 } fmt;
 
 int put_char(char c);
