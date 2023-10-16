@@ -20,7 +20,8 @@ int printf_37(void);
 int printf_char(va_list val);
 int printf_string(va_list val);
 int _putchar(char c);
-
+int print_s(va_list ap, params_t *params);
+{
 int pnt37(void);
 int pntch(va_list value);
 int pntstr(va_list value);
