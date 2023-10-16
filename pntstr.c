@@ -8,5 +8,5 @@ int pntstr(va_list value)
 {
 	char *string = va_arg(value, char *);
 
-	return (put_str(string ? string : "(nil)"));
+	return (put_str(string ? string : "(null)"));
 }

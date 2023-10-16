@@ -8,5 +8,7 @@
 
 int pntch(va_list value)
 {
-	return (put_char(va_arg(value, int)));
+	char c = va_arg(value, int);
+
+	return (put_char(c));
 }
