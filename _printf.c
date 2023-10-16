@@ -21,13 +21,15 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 	va_start(value, format); /*initialize the arguments with format*/
+
 	while (*format != '\0') /*while we are still on a character*/
 	{
 		if (*format == '%') /*if current character is %*/
 		{
 			format++; /*move to next character*/
-			i = 0;
-			specs = 0;
+			if (*format == '\0')
+				break;
+			i = 0, specs = 0;
 			while (i < sizeof(specifiers) / sizeof(specifiers[0]))
 			{
 				if (*format == specifiers[i].c)
@@ -39,9 +41,7 @@ int _printf(const char *format, ...)
 				i++;
 			}
 			if (specs == 0)
-			{
 				t_len += put_char('%') + put_char(*format);
-			}
 		}
 		else
 			t_len += put_char(*format);
