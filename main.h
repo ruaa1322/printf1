@@ -20,8 +20,6 @@ typedef struct
 
 int put_char(char c);
 int put_str(char *string);
-<<<<<<< HEAD
-/*<<<<<<< HEAD*/
 int _printf(const char *format, ...);
 int printf_int(va_list args);
 int printf_dec(va_list args);
@@ -37,7 +35,6 @@ int print_s(va_list ap, params_t *params);
 int pnt37(void);
 =======
 int pnt37(va_list value);
->>>>>>> 4de55152303a1e203dfcb5ec10437214b58d5020
 int pntch(va_list value);
 int pntstr(va_list value);
 int pntint(va_list value);
