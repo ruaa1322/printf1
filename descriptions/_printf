@@ -1,0 +1,5 @@
+First we initialize all necessary variables, then we check if the format is NULL. If so, we return a negative integer
+Then we iterate throught the format as long as it is not a null byte
+if we run into a %, we check the next character for each of the stated cases and print their respective values as well as increase the length
+
+This is a simple description of _printf
