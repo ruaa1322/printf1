@@ -30,13 +30,8 @@ int printf_37(void);
 int printf_char(va_list val);
 int printf_string(va_list val);
 int _putchar(char c);
-int print_s(va_list ap, params_t *params);
-{
-int pnt37(void);
-=======
-int pnt37(va_list value);
+
 int pntch(va_list value);
-int pntstr(va_list value);
 int pntint(va_list value);
 int pntb(va_list value);
 int pntuint(va_list value);
@@ -46,5 +41,6 @@ int pntHEX(va_list value);
 int _printf(const char *format, ...);
 int str_len(char *str);
 int str_len_c(const char *str);
-
+int print_HEX_extra(unsigned int num);
+int print_exc_string(va_list val);
 #endif
