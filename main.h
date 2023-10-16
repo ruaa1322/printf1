@@ -17,7 +17,7 @@ typedef struct
 	char c;
 	int (*f)(va_list value);
 } fmt;
-
+int _putchar(char c);
 int put_char(char c);
 int put_str(char *string);
 int pnt37(va_list value);
@@ -32,5 +32,7 @@ int pntHEX(va_list value);
 int _printf(const char *format, ...);
 int str_len(char *str);
 int str_len_c(const char *str);
+int print_exc_string(va_list val);
+int print_HEX_extra(unsigned int num);
 
 #endif
