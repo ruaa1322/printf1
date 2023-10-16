@@ -12,7 +12,7 @@ int pntint(va_list value)
 	int t_len = 0; /*initialize total length*/
 	int dg, i = 0; /*i is counter, dg is the current digit*/
 	char dg_char; /*used to convert int to char*/
-	char buf[12];
+	char buf[36];
 
 	if (n < 0) /*if integer is negative*/
 	{
