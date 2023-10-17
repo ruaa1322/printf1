@@ -18,7 +18,9 @@ int main(void)
 	_printf("%u, %u, %u, %u\n", 100000, 0, -10000, 42);
 	_printf("%o, %o, %o, %o\n", 100000, 0, -10000, 42);
 	_printf("%x, %x, %x, %x\n", 100000, 0, -10000, 42);
-	_printf("%X, %X, %X, %X\n", 100000, 0, -10000, 42); 
+	_printf("%X, %X, %X, %X\n", 100000, 0, -10000, 42);
+        _printf("%p, %p, %p\n", NULL, 0x1234, 0xdeadbeef);
+	printf("%p, %p, %p\n", NULL, 0x1234, 0xdeadbeef);
 
 	return (0);
 }

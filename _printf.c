@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 		{'%', pnt37}, {'c', pntch}, {'s', pntstr},
 		{'d', pntint}, {'i', pntint}, {'b', pntb},
 		{'u', pntuint}, {'o', pntoct}, {'x', pnthex}, {'X', pntHEX},
+		{'p', pntptr}
 	};
 
 	if (format == NULL)
