@@ -25,9 +25,11 @@ typedef struct
 	char c;
 	int (*f)(va_list value);
 } fmt;
+
 int _putchar(char c);
 int put_char(char c);
 int put_str(char *string);
+
 int pnt37(va_list value);
 int pntch(va_list value);
 int pntstr(va_list value);
@@ -38,13 +40,21 @@ int pntoct(va_list value);
 int pnthex(va_list value);
 int pntHEX(va_list value);
 int pntptr(va_list value);
+int ptrhex(char *buf, void *ptr);
+
 int _printf(const char *format, ...);
+
 int str_len(char *str);
 int str_len_c(const char *str);
 int print_exc_string(va_list val);
 int print_HEX_extra(unsigned int num);
 int get_flags(const char *format, int *i);
-int print_string(va_list types, char buffer[],
-		int flags, int width, int precision, int size);
-int ptrhex(char *buf, void *ptr);
+/*
+ * int print_string(va_list types, char buffer[],
+ * int flags, int width, int precision, int size);
+ */
+
+
+
+
 #endif

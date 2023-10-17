@@ -1,9 +1,9 @@
 #include "main.h"
 /**
  * pntptr - function that prints pointer
- * @value:argument
- * Return:t_len
- * */
+ * @value: argument
+ * Return: t_len
+ */
 
 int pntptr(va_list value)
 {
@@ -26,15 +26,15 @@ int pntptr(va_list value)
 		t_len += put_str(buf);
 	}
 
-	return t_len;
+	return (t_len);
 }
 
-/* Custom function to convert a pointer to a hexadecimal string*/
 /**
- *ptrhex - converts the pointer to hex
- * @ptr:pointer
- * return:t_len
- * */
+ * ptrhex - converts the pointer to hex sring
+ * @buf: buffer
+ * @ptr: pointer
+ * Return: t_len
+ */
 int ptrhex(char *buf, void *ptr)
 {
 	int t_len = 0;
@@ -55,5 +55,5 @@ int ptrhex(char *buf, void *ptr)
 			t_len++;
 		}
 	*buf = '\0'; /* Null-terminate the string */
-	return t_len;
+	return (t_len);
 }

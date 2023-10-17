@@ -14,15 +14,13 @@ int _printf(const char *format, ...)
 	va_list value; /*declare argument list*/
 	fmt specifiers[] = {
 		{'%', pnt37}, {'c', pntch}, {'s', pntstr},
-		{'d', pntint}, {'i', pntint}, {'b', pntb},
+		{'d', pntint}, {'i', pntint}, {'b', pntb}, {'p', pntptr},
 		{'u', pntuint}, {'o', pntoct}, {'x', pnthex}, {'X', pntHEX},
-		{'p', pntptr}
 	};
 
 	if (format == NULL)
 		return (-1);
 	va_start(value, format); /*initialize the arguments with format*/
-
 	while (*format != '\0') /*while we are still on a character*/
 	{
 		if (*format == '%') /*if current character is %*/
