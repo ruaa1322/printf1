@@ -29,6 +29,8 @@ int pntuint(va_list value);
 int pntoct(va_list value);
 int pnthex(va_list value);
 int pntHEX(va_list value);
+int pntptr(va_list value);
+int custom_ptr_to_hex(char *buf, void *ptr);
 int _printf(const char *format, ...);
 int str_len(char *str);
 int str_len_c(const char *str);
