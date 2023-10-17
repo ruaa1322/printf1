@@ -7,7 +7,7 @@ int pntptr(va_list value)
 	/* Assuming you want to print the pointer in hexadecimal format*/
 	/*You can customize this as needed*/
 	char buf[20]; /*Buffer for storing the hexadecimal representation*/
-	
+
 	if (ptr == NULL)
 	{
 		/* Handle NULL pointer*/
@@ -20,7 +20,7 @@ int pntptr(va_list value)
 		t_len += custom_ptr_to_hex(buf, ptr);
 		t_len += put_str(buf);
 	}
-	
+
 	return t_len;
 }
 
