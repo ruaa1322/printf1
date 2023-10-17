@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * print_exc_string - prints
+ * @val: value
+ * Return: len
+ */
+
 int print_exc_string(va_list val)
 {
 	char *s;

@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * print_HEX_extra - prints
+ * @num: number
+ * Return: counter
+ */
+
 int print_HEX_extra(unsigned int num)
 {
 	int i, counter = 0;
