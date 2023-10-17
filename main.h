@@ -38,7 +38,6 @@ int pntoct(va_list value);
 int pnthex(va_list value);
 int pntHEX(va_list value);
 int pntptr(va_list value);
-int custom_ptr_to_hex(char *buf, void *ptr);
 int _printf(const char *format, ...);
 int str_len(char *str);
 int str_len_c(const char *str);
@@ -47,4 +46,5 @@ int print_HEX_extra(unsigned int num);
 int get_flags(const char *format, int *i);
 int print_string(va_list types, char buffer[],
 		int flags, int width, int precision, int size);
+int ptrhex(char *buf, void *ptr);
 #endif

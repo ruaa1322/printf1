@@ -1,4 +1,9 @@
 #include "main.h"
+/**
+ * pntptr - function that prints pointer
+ * @value:argument
+ * Return:t_len
+ * */
 
 int pntptr(va_list value)
 {
@@ -17,7 +22,7 @@ int pntptr(va_list value)
 	{
 		t_len += put_str("0x");
 		/* Custom function to convert the pointer to a hexadecimal string */
-		t_len += custom_ptr_to_hex(buf, ptr);
+		t_len += ptrhex(buf, ptr);
 		t_len += put_str(buf);
 	}
 
@@ -25,7 +30,12 @@ int pntptr(va_list value)
 }
 
 /* Custom function to convert a pointer to a hexadecimal string*/
-int custom_ptr_to_hex(char *buf, void *ptr)
+/**
+ *ptrhex - converts the pointer to hex
+ * @ptr:pointer
+ * return:t_len
+ * */
+int ptrhex(char *buf, void *ptr)
 {
 	int t_len = 0;
 	/**
