@@ -38,7 +38,7 @@ int print_exc_string(va_list val);
 int print_HEX_extra(unsigned int num);
 int get_flags(const char *format, int *i);
 int print_string(va_list types, char buffer[],
-        int flags, int width, int precision, int size);
+		int flags, int width, int precision, int size);
 /*try*/
 /**
  * struct fmt - Struct op
